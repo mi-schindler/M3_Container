@@ -53,12 +53,12 @@ configure()
 	  
 	  cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=DEBUG -DFORTE_ARCHITECTURE=Posix -DFORTE_LOGLEVEL=LOGDEBUG -DFORTE_TESTS=OFF \
 			-DCMAKE_AR=/usr/bin/armv7a-hardfloat-linux-gnueabi-ar -DCMAKE_CXX_COMPILER=/usr/bin/armv7a-hardfloat-linux-gnueabi-g++ \
-			-DCMAKE_CXX_FLAGS="-std=gnu++14 -w -s -I${STAGING_INCLUDE} -L${STAGING_LIB}" \
+			-DCMAKE_CXX_FLAGS="-std=gnu++14 -w -s -I${STAGING_INCLUDE} -I${STAGING_INCLUDE}/modbus -L${STAGING_LIB}" \
 			-DCMAKE_C_COMPILER=/usr/bin/armv7a-hardfloat-linux-gnueabi-gcc \
 			-DCMAKE_LINKER=/usr/bin/armv7a-hardfloat-linux-gnueabi-ld -DCMAKE_NM=/usr/bin/armv7a-hardfloat-linux-gnueabi-nm -DCMAKE_OBJCOPY=/usr/bin/armv7a-hardfloat-linux-gnueabi-objcopy \
 			-DCMAKE_OBJDUMP=/usr/bin/armv7a-hardfloat-linux-gnueabi-objdump -DCMAKE_RANLIB=/usr/bin/armv7a-hardfloat-linux-gnueabi-ranlib \
 			-DCMAKE_STRIP=/usr/bin/armv7a-hardfloat-linux-gnueabi-strip \
-			-DFORTE_COM_ETH=ON -DFORTE_COM_FBDK=ON -DFORTE_COM_LOCAL=ON -DFORTE_COM_MODBUS=OFF -DFORTE_COM_PAHOMQTT=ON -DFORTE_COM_RAW=ON -DFORTE_COM_SER=ON \
+			-DFORTE_COM_ETH=ON -DFORTE_COM_FBDK=ON -DFORTE_COM_LOCAL=ON -DFORTE_COM_MODBUS=ON -DFORTE_COM_PAHOMQTT=ON -DFORTE_COM_RAW=ON -DFORTE_COM_SER=ON \
 			-DFORTE_COM_PAHOMQTT_DIR=${STAGING_LIB} \
 			-DFORTE_MODULE_CONVERT=ON -DFORTE_MODULE_I2C-Dev=ON -DFORTE_MODULE_IEC61131=ON -DFORTE_MODULE_INSYS_Functionblocks=ON -DFORTE_MODULE_RECONFIGURATION=ON -DFORTE_MODULE_UTILS=ON \
 			-DCMAKE_INSTALL_PREFIX=${STAGING_DIR} ../../
